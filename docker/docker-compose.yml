@@ -1,0 +1,37 @@
+services:
+
+  ia-la-were:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../input:/app/input
+      - ../output:/app/output
+      - ../models:/app/models
+      - ../config:/app/config:ro
+    environment:
+      - YOLO_TELEMETRY=False
+      - ANONYMIZED_TELEMETRY=False
+    depends_on:
+      - ollama
+    # Accès à Ollama sur localhost du host
+    network_mode: host
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+volumes:
+  ollama_data:

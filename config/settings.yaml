@@ -1,0 +1,29 @@
+paths:
+  input:  input
+  output: output
+  models: models
+
+detectors:
+  label:
+    model:                models/label_detector_v1.pt
+    model_version:        label_detector_v1
+    confidence_threshold: 0.75      # Au-dessus = étiquette détectée
+
+  scorie:
+    model:                models/scorie_detector_v1.pt
+    model_version:        scorie_detector_v1
+    confidence_threshold: 0.60      # Plus permissif : sécurité > faux négatifs
+    ollama:
+      url:                http://localhost:11434
+      model:              moondream2
+      fallback_threshold: 0.70      # En dessous de ce seuil YOLO → délègue à Ollama
+
+processing:
+  valid_extensions: [.jpg, .jpeg, .png, .tiff, .tif]
+  max_file_size_mb: 50
+
+security:
+  verify_model_hash: true
+  model_hashes:
+    label_detector_v1.pt:  null    # À renseigner après entraînement (sha256)
+    scorie_detector_v1.pt: null
