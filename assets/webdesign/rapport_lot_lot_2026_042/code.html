@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IA La Wère - Rapport de Lot LOT-2026-042</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid #334155;
+        }
+        .industrial-glow:hover {
+            box-shadow: 0 0 15px rgba(107, 216, 203, 0.2);
+        }
+        @keyframes pulse-scan {
+            0% { border-color: #334155; }
+            50% { border-color: #6bd8cb; }
+            100% { border-color: #334155; }
+        }
+        .scanning-border {
+            animation: pulse-scan 2s infinite ease-in-out;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#ffb690",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed-variant": "#783200",
+                      "tertiary-fixed": "#6ffbbe",
+                      "inverse-on-surface": "#283044",
+                      "primary-fixed-dim": "#6bd8cb",
+                      "on-surface-variant": "#bcc9c6",
+                      "secondary-fixed-dim": "#ffb690",
+                      "on-tertiary-container": "#00311f",
+                      "surface-container-highest": "#2d3449",
+                      "secondary-container": "#ec6a06",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-container": "#00a572",
+                      "on-tertiary-fixed": "#002113",
+                      "outline-variant": "#3d4947",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "primary": "#6bd8cb",
+                      "surface-container-low": "#131b2e",
+                      "surface": "#0b1326",
+                      "error-container": "#93000a",
+                      "secondary-fixed": "#ffdbca",
+                      "on-error": "#690005",
+                      "on-tertiary": "#003824",
+                      "surface-container-lowest": "#060e20",
+                      "on-primary-container": "#00302b",
+                      "outline": "#879391",
+                      "on-surface": "#dae2fd",
+                      "surface-tint": "#6bd8cb",
+                      "background": "#0b1326",
+                      "on-primary-fixed-variant": "#005049",
+                      "on-secondary-container": "#4a1c00",
+                      "surface-variant": "#2d3449",
+                      "on-secondary-fixed": "#341100",
+                      "surface-dim": "#0b1326",
+                      "on-secondary": "#552100",
+                      "on-background": "#dae2fd",
+                      "primary-container": "#29a195",
+                      "primary-fixed": "#89f5e7",
+                      "surface-container": "#171f33",
+                      "inverse-primary": "#006a61",
+                      "on-primary": "#003732",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "inverse-surface": "#dae2fd",
+                      "tertiary": "#4edea3",
+                      "surface-container-high": "#222a3d",
+                      "on-primary-fixed": "#00201d",
+                      "surface-bright": "#31394d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "xl": "64px",
+                      "margin": "32px",
+                      "xs": "4px",
+                      "lg": "40px",
+                      "base": "8px",
+                      "sm": "12px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "data-md": ["JetBrains Mono"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "data-lg": ["JetBrains Mono"],
+                      "label-caps": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "data-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "data-lg": ["18px", {"lineHeight": "24px", "fontWeight": "500"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md min-h-screen selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/50 backdrop-blur-md border-b border-outline-variant flex items-center justify-between px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="sensors_off">sensors_off</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">IA La Wère</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-data-md text-data-md text-primary bg-primary-container/20 px-3 py-1 rounded">LOT-2026-042</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-variant/30 p-2 rounded transition-colors" data-icon="search">search</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-variant/30 p-2 rounded transition-colors" data-icon="notifications">notifications</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-margin max-w-7xl mx-auto space-y-gutter">
+<!-- Hero Header: Lot Status -->
+<section class="glass-panel rounded-xl p-gutter relative overflow-hidden">
+<div class="absolute top-0 right-0 p-gutter opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="check_circle">check_circle</span>
+</div>
+<div class="relative z-10 space-y-4">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-1">Rapport de Lot Détaillé</p>
+<h1 class="font-headline-xl text-headline-xl text-primary leading-none">LOT-2026-042</h1>
+</div>
+<div class="flex items-center gap-3 bg-tertiary-container px-6 py-3 rounded-lg border border-tertiary">
+<span class="material-symbols-outlined text-on-tertiary-container font-bold" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-headline-md text-headline-md text-on-tertiary-container font-bold">CONFORME</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-outline-variant">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">Date d'Analyse</span>
+<span class="font-data-lg text-data-lg">24 Oct 2026 - 14:32</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">Opérateur</span>
+<span class="font-data-lg text-data-lg">Station_A42</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">Temps Total</span>
+<span class="font-data-lg text-data-lg">14.2s</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">Type d'Unité</span>
+<span class="font-data-lg text-data-lg">CHASSIS-XL-V4</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Summary Metrics Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-panel rounded-xl p-gutter flex items-center gap-gutter industrial-glow transition-all">
+<div class="bg-primary/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="photo_library">photo_library</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg leading-none">12</h3>
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase">Photos Capturées</p>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-gutter flex items-center gap-gutter industrial-glow transition-all">
+<div class="bg-tertiary/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="label">label</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg leading-none">12</h3>
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase">Étiquettes Présentes</p>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-gutter flex items-center gap-gutter industrial-glow transition-all">
+<div class="bg-on-surface-variant/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl" data-icon="biotech">biotech</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg leading-none">0</h3>
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase">Scories Détectées</p>
+</div>
+</div>
+</section>
+<!-- Main Inspection Grid -->
+<section class="space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="grid_view">grid_view</span>
+<h2 class="font-headline-md text-headline-md">Galerie d'Inspection</h2>
+</div>
+<div class="flex gap-2 p-1 bg-surface-container rounded-lg border border-outline-variant overflow-x-auto no-scrollbar">
+<button class="px-4 py-1.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase">Tout</button>
+<button class="px-4 py-1.5 rounded hover:bg-surface-variant/30 text-on-surface-variant font-label-caps text-label-caps uppercase transition-colors">Conforme</button>
+<button class="px-4 py-1.5 rounded hover:bg-surface-variant/30 text-on-surface-variant font-label-caps text-label-caps uppercase transition-colors">Non-conforme</button>
+<button class="px-4 py-1.5 rounded hover:bg-surface-variant/30 text-on-surface-variant font-label-caps text-label-caps uppercase transition-colors">À vérifier</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Photo Card 1 -->
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="High-resolution industrial macro photograph of a metallic component assembly under cool blue lighting. The image shows a perfectly aligned circuit board label with visible part numbers. The overall aesthetic is clean, technical, and high-tech, fitting an industrial quality control dashboard with deep navy and teal accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxIlYK0R8-RQ07SWls-H7aCLolu5elhV-vKcWpF8zEUP6-WdBrhhyXksi8mWhHqAZ-aHG9eeR6RsAZhlfS0sTQLbsEljZckS5Z2fZQAjYNmvmerwjX9DhiCTxP9VqgthSnhfPydLiYSnfCLqjZYKI4Q_PkiiwQ9Xb1XfBI7zda1BWyfTUra5h93u4tu2B_7vnWkkL68lPSHmxAGLS4daonkSdgaQ1i3Gk8elQ_yWPdhWS2ofl5rg')"></div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-surface/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-data-md text-[11px] text-primary truncate">CAM_FR_01.jpg</p>
+</div>
+</div>
+<!-- Photo Card 2 -->
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Technical close-up of a structural steel joint with a barcode scanner laser line passing over it. The environment is dark and atmospheric, with sharp teal highlights on the edges of the metal. Professional industrial inspection photography style with high contrast and sharp focus on the label integrity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDM1nIXKY06a6NpPnPPDmZLjqVHoydHVYqIlG8p-7OEHOKBnHkuAY-8BydVIONFCJzECNZnIYnpuXZ8JkLw4tKtJl2K480zp0q1X4ME6kfo0ucorSNl55FDjQGFEUTIAcTJ8LLrdNfnJcq-zyzniDorckicsNFEbe6YYLBq8Z79oBwhs9FkXsWua3dtc_7Uc3Co_L5eckXNZ2XbhD0sjYHfWcnMF9azRBHnVOBoIWIoZxeCVqM0-g')"></div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-surface/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-data-md text-[11px] text-primary truncate">CAM_FR_02.jpg</p>
+</div>
+</div>
+<!-- Photo Card 3 -->
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A detailed view of an industrial connector set within a brushed aluminum casing. Soft, diffused overhead factory lighting reveals the intricate textures of the metal and the precision of the assembly. The visual style is modern corporate industrial with a dark navy background and glowing teal sensor indicators." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4t9gAESCo5nPlfoM9QU8fYYiUg50IXpDNR48rzcwX3CIMQgn5gtX286QHPxz0-HLnYd3Q0ayyl6MyJM3XPXcrwXvqWo9qVHDltY73w7an5_PrWmQuOe2oGHKtQ4gdGygV7hq4jx076O6NaNLpPUAvIo__bUrsF7cxXSadkrcUPT7kkQN1wF3XqvlBNSlU5gSfRbysQzCE5V3Xzirb1GhmHwb8_r_BfFD-FQ6QMyQs2bycf62UwQ')"></div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-surface/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-data-md text-[11px] text-primary truncate">CAM_SIDE_01.jpg</p>
+</div>
+</div>
+<!-- Photo Card 4 -->
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Macro photography of a perfectly soldered joint on a heavy-duty industrial controller. The shot uses shallow depth of field to emphasize the quality of the finish. The color palette is dominated by dark slate and vibrant teal accents, reflecting a high-end AI-driven monitoring system interface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWikSd5IwnW4KN4CCTuiavptM_55e_ditm4t5vWOrQo-NFFbvriKNwoz4xOpeRxZvDyqAuS3i07kVIkp1kqsRHKSLuQxVle4i4w1fNPFgJ0n_-4gevdiGN7Lw5FdxYJZa_4gBAPCn7nu-2uCCGRuWeHu4LJLjUd8bZ5k0-BeLHIa_fpxNyXHCn3uxmHemkB5teGhFLQuimV63t5Y6MBTu95UGNym5f7Q5bQEdQ1k32oHuFja34Xw')"></div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-surface/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-data-md text-[11px] text-primary truncate">CAM_SIDE_02.jpg</p>
+</div>
+</div>
+<!-- Photo Card 5 -->
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Top-down perspective of an industrial parts tray moving along a robotic assembly line. The lighting is crisp and clinical, highlighting the geometric organization of the lot. The style is professional tech-industrial with a dark mode glassmorphic aesthetic and sharp, thin teal bordering around the elements." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBI8aA0esjpVG-dq-QT2bQ1J_lhr1TdVoTM6Ho99mgD2mjsRyYZO2ullDuKE-dlQNZJbgT6VcpVNIE75ib0WjYw1Gbf8c7wK4ln0dkvfdzEVHjaC8ELahsOeqkJWzUfxzwREMd2nozUS1zetCZClbuRf-YnF-2S9dqnoouOTApSSqFm-hlAhuHL228E0UceKg26jb5A3mPqPihud2m2vtXYWelNXGzT5RIRntnlSbSUtai4miLomw')"></div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-surface/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-data-md text-[11px] text-primary truncate">CAM_TOP_01.jpg</p>
+</div>
+</div>
+<!-- Photo Card 6 -->
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Extreme close-up of an identification tag affixed to an industrial chassis. The text is razor-sharp and the tag is perfectly centered. The lighting suggests a high-tech facility with cool, analytical tones. The overall image reinforces a sense of rigorous quality control and modern industrial efficiency." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4fAx02fbPjqr9KUAI7WkfsMyYON-zPgvyhFelCdAUVRwpeDMoAZsHQAr5PLCf69hfUhLT1elTm1Qo-oocjAB2my_5FY7jY7h3_jYqpKokQWdHtAt1flMrZy4SaGISqhiuoDfPHl4asDHhdLx-kefgI-GfkZN5aVMNqLVBxOVieIcUYLbRYVM0erGdnWyLqRIbD1oQCk3ueTniwned2cMJHKuwhDDFu53TA-hDdCuxUgCOWo9MoA')"></div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-surface/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-data-md text-[11px] text-primary truncate">CAM_TOP_02.jpg</p>
+</div>
+</div>
+<!-- Photo Card 7 -->
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Industrial wide shot of the inspection bay with a chassis in the center of the frame. Multiple camera lenses and sensors are visible in the periphery. High-contrast lighting with deep blacks and bright teal indicator lights creates a powerful, high-stakes manufacturing environment atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzzY3BjUKifV3X_dOL3HjTNkb7N0td3rBjxxjPIwXCuqk59-7qFczLccEbR-jEETdVMREsY2mwZm2r1xzM4_0HFIzDvxkFJNcScIqYYYWqbfrHfYKCMq4Dh4zYhWWX0VbHdZv0kbE384KyjcKSoBBK4UTjBYNY_zPMRF7JH2ODtj1fmqoEOJVytwlzhr-hb5kphANwl326I84UhnydT6fQAa-d3K3GfOhZn-o5F9vAHB5PX2f1nA')"></div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+</div>
+<!-- Photo Card 8 -->
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Detailed macro of the texture on a heat-treated industrial part. The surface reflects subtle green and blue lights from the AI scanning equipment. The composition is balanced and technical, showcasing the high-resolution capabilities of the monitoring system in a dark-mode industrial UI context." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1BA5-TZs_tVxd6Dhv_JCvlGAwTruRCyrFjkQpNo08hsen-YtCoBM-hfraX6cOOVejPKGUn35f0S7FdE8uT75-8sD5n6on5bm0K2_iQH2sK3xNVrEXYNlgNMmfbrpducojaQ1o5dB_SPW_wV8IHrnpqFKODRnFBm52i90lDgUVicTWnbMqDt4xIn-Lpe0ySGiLMJRis-KCS3s4np72veYAlS83ftA_nD8S6onGmvtiajUuYOB8CQ')"></div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+</div>
+<!-- Placeholder cards for variety -->
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-surface-container-highest/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant text-4xl" data-icon="image">image</span>
+</div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+</div>
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-surface-container-highest/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant text-4xl" data-icon="image">image</span>
+</div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+</div>
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-surface-container-highest/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant text-4xl" data-icon="image">image</span>
+</div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+</div>
+<div class="group relative aspect-square glass-panel rounded-lg overflow-hidden border border-outline-variant cursor-pointer hover:border-primary transition-all">
+<div class="w-full h-full bg-surface-container-highest/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant text-4xl" data-icon="image">image</span>
+</div>
+<div class="absolute top-2 right-2">
+<span class="bg-tertiary text-on-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded shadow-lg">CONFORME</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Technical Data Section -->
+<section class="glass-panel rounded-xl overflow-hidden">
+<div class="px-gutter py-4 border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="analytics">analytics</span>
+<h2 class="font-headline-md text-headline-md">Détails de Télémétrie AI</h2>
+</div>
+<span class="font-data-md text-data-md text-on-surface-variant">Confiance du Modèle: 99.8%</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-variant/20">
+<th class="px-gutter py-4 font-label-caps text-label-caps text-outline uppercase">Paramètre</th>
+<th class="px-gutter py-4 font-label-caps text-label-caps text-outline uppercase">Valeur Détectée</th>
+<th class="px-gutter py-4 font-label-caps text-label-caps text-outline uppercase">Tolérance</th>
+<th class="px-gutter py-4 font-label-caps text-label-caps text-outline uppercase text-right">Statut</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr>
+<td class="px-gutter py-4 font-body-md">Alignement Étiquette A1</td>
+<td class="px-gutter py-4 font-data-md">0.02mm offset</td>
+<td class="px-gutter py-4 font-data-md text-secondary">± 0.15mm</td>
+<td class="px-gutter py-4 text-right">
+<span class="bg-tertiary/20 text-tertiary font-label-caps text-[11px] px-3 py-1 rounded border border-tertiary/30">PASS</span>
+</td>
+</tr>
+<tr>
+<td class="px-gutter py-4 font-body-md">Présence Logo Constructeur</td>
+<td class="px-gutter py-4 font-data-md">Détecté</td>
+<td class="px-gutter py-4 font-data-md text-secondary">Obligatoire</td>
+<td class="px-gutter py-4 text-right">
+<span class="bg-tertiary/20 text-tertiary font-label-caps text-[11px] px-3 py-1 rounded border border-tertiary/30">PASS</span>
+</td>
+</tr>
+<tr>
+<td class="px-gutter py-4 font-body-md">Analyse Surface (Scories)</td>
+<td class="px-gutter py-4 font-data-md">Néant</td>
+<td class="px-gutter py-4 font-data-md text-secondary">&lt; 1% total</td>
+<td class="px-gutter py-4 text-right">
+<span class="bg-tertiary/20 text-tertiary font-label-caps text-[11px] px-3 py-1 rounded border border-tertiary/30">PASS</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Final Actions -->
+<section class="flex flex-col md:flex-row gap-4 pt-4">
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary text-on-primary font-bold py-4 rounded-lg industrial-glow transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+<span>Exporter le Rapport (JSON)</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 border border-outline text-on-surface font-bold py-4 rounded-lg hover:bg-surface-variant/20 transition-all">
+<span class="material-symbols-outlined" data-icon="print">print</span>
+<span>Imprimer le Certificat</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-t border-outline-variant flex justify-around items-center h-20 px-2 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps uppercase mt-1">Tableau de bord</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+<span class="font-label-caps text-label-caps uppercase mt-1">Analyses</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps uppercase mt-1">Paramètres</span>
+</a>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('.glass-panel').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

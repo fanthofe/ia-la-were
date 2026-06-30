@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="dark" lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <title>IA La Wère — Détection Industrielle</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="config/tailwind.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="styles/main.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-surface industrial-grid min-h-screen pb-24">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface/50 backdrop-blur-md border-b border-outline-variant flex items-center justify-between px-4 h-16">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-primary">sensors</span>
+      <h1 class="font-headline-md text-headline-md font-bold text-primary">IA La Wère</h1>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center px-3 py-1 bg-surface-variant/30 rounded-full border border-outline-variant">
+        <span class="font-data-md text-data-md text-primary mr-2">STATUS:</span>
+        <span id="header-status" class="font-data-md text-data-md text-on-surface">OFFLINE MODE</span>
+      </div>
+      <span id="header-lot" class="font-data-md text-data-md text-primary tracking-wider bg-primary/10 px-3 py-1 rounded hidden"></span>
+    </div>
+  </header>
+
+  <!-- Screens (content injected by JS modules) -->
+  <div id="screen-dashboard" class="screen pt-24 pb-32 px-4 md:px-margin max-w-7xl mx-auto"></div>
+  <div id="screen-analyse"   class="screen pt-24 pb-32 px-4 md:px-margin max-w-7xl mx-auto"></div>
+  <div id="screen-rapport"   class="screen pt-24 pb-32 px-4 md:px-margin max-w-7xl mx-auto"></div>
+
+  <!-- Bottom nav -->
+  <nav class="fixed bottom-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-t border-outline-variant flex justify-around items-center h-20 px-2">
+    <button data-nav="dashboard" class="nav-btn flex flex-col items-center justify-center px-4 py-1 rounded-full transition-all">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">dashboard</span>
+      <span class="font-label-caps text-label-caps">Tableau de bord</span>
+    </button>
+    <button data-nav="rapport" class="nav-btn flex flex-col items-center justify-center px-4 py-1 rounded-full transition-all">
+      <span class="material-symbols-outlined">query_stats</span>
+      <span class="font-label-caps text-label-caps">Analyses</span>
+    </button>
+    <button data-nav="settings" class="nav-btn flex flex-col items-center justify-center px-4 py-1 rounded-full transition-all">
+      <span class="material-symbols-outlined">settings</span>
+      <span class="font-label-caps text-label-caps">Paramètres</span>
+    </button>
+  </nav>
+
+  <!-- FAB -->
+  <button id="fab-new-lot" class="fixed bottom-24 right-4 md:right-margin w-14 h-14 md:w-16 md:h-16 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-50 group">
+    <span class="material-symbols-outlined text-[28px] group-hover:rotate-12 transition-transform" style="font-variation-settings:'FILL' 1;">photo_camera</span>
+    <div class="absolute right-full mr-4 bg-primary text-on-primary px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap font-label-caps text-label-caps">
+      NOUVEAU LOT
+    </div>
+  </button>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

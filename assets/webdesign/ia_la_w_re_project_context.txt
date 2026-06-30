@@ -1,0 +1,15 @@
+# IA La Wère — Détection Visuelle Industrielle
+## Contexte Projet
+Logiciel local de détection d'éléments visuels sur des photos industrielles (containers).
+Chaque lot de photos est associé à un **matricule unique** (dossier identifié).
+Cas d'usage actuels :
+- Détecter la **présence d'une étiquette** sur un container
+- Détecter la **présence de scorie / saleté** dans un container
+Contrainte principale : **tout doit tourner en local**, aucune donnée ne sort du site.
+
+## Architecture & Workflow
+1. L'opérateur crée un dossier : input/LOT-2026-042/
+2. Il y dépose les photos du lot (.jpg, .png)
+3. Il lance l'analyse via l'interface.
+4. Résultats générés dans output/LOT-2026-042/ (rapport.json + photos annotées).
+5. Statut final : CONFORME / NON-CONFORME / VÉRIFICATION MANUELLE REQUISE.
